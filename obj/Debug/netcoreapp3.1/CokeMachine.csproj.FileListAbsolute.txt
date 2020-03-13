@@ -1,0 +1,11 @@
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\bin\Debug\netcoreapp3.1\CokeMachine.exe
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\bin\Debug\netcoreapp3.1\CokeMachine.deps.json
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\bin\Debug\netcoreapp3.1\CokeMachine.runtimeconfig.json
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\bin\Debug\netcoreapp3.1\CokeMachine.runtimeconfig.dev.json
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\bin\Debug\netcoreapp3.1\CokeMachine.dll
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\bin\Debug\netcoreapp3.1\CokeMachine.pdb
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\obj\Debug\netcoreapp3.1\CokeMachine.AssemblyInfoInputs.cache
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\obj\Debug\netcoreapp3.1\CokeMachine.AssemblyInfo.cs
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\obj\Debug\netcoreapp3.1\CokeMachine.dll
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\obj\Debug\netcoreapp3.1\CokeMachine.pdb
+E:\Visual Studio Projects\kulikitaka\CokeMachine\CokeMachine\obj\Debug\netcoreapp3.1\CokeMachine.csprojAssemblyReference.cache
