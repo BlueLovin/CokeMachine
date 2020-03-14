@@ -8,7 +8,7 @@ namespace CokeMachine
     {
         public static float userBalance, selectionPrice;
         public static string selectionID;
-        static void Main(float balance)
+        public static void Main(float balance)
         {
 
             coke Coke = new coke();
@@ -17,9 +17,13 @@ namespace CokeMachine
             drPepper DrPepper = new drPepper();
             dasani Dasani = new dasani();
             DateTime date = DateTime.Now;
+            Console.Clear();
 
             Console.WriteLine("Welcome to the Coke Machine.");
             Console.WriteLine("The date is: {0: MM/dd/yyyy HH:mm:ss}.", date);
+            colorGreen();
+            Console.WriteLine("\nYour current balance: ${0}", balance);
+            colorWhite();
 
             colorWhite();
             Console.WriteLine("\nHere are your options:");
@@ -85,38 +89,61 @@ namespace CokeMachine
             }
 
             if (selection == 5)
-            {
+            { 
                 selectionID = "Dasani";
                 selectionPrice = dasani.price;
             }
-            Console.WriteLine("You chose {0}. Current balance: {1}" +
-                "\nPlease insert $" + (selectionPrice - balance), selectionID, balance);
-            while (balance < selectionPrice)
+            ///
+            ///
+            ///
+                if (selectionPrice > balance)
+                {
+                    Console.WriteLine("You chose {0}. Current balance: ${1}" +
+                        "\nPlease insert $" + (selectionPrice - balance), selectionID, balance);
+                }
+                if (balance >= selectionPrice)
+                {
+                    Console.WriteLine("Thank you. Enjoy your {0}", selectionID);
+                    balance -= selectionPrice;
+                    giveChange(balance);
+                }
+            try
             {
-                balance += float.Parse(Console.ReadLine());
-                Console.WriteLine("Current Balance: " + (balance - selectionPrice));
+                do
+                {
+                    balance += float.Parse(Console.ReadLine());
+                    Console.WriteLine("Current Balance: ${0}", (balance - selectionPrice).ToString("#.##"));
+                } while (balance < selectionPrice);
             }
-
-            if (balance > selectionPrice)
+            catch
             {
-                float balanceLocal = userBalance - selectionPrice;
-                giveChange(balanceLocal);
+                Console.WriteLine("Invalid input. Try again.");
+                insertCash(selection, balance);
             }
+                if (balance >= selectionPrice)
+                {
+                    float balanceLocal = balance - selectionPrice;
+                    giveChange(balanceLocal);
+                }
         }
         static void giveChange(float change)
         {
-            Console.WriteLine("Would you like to buy another drink?");
-            bool yesOrNo;
+            Console.WriteLine("Would you like to buy another drink? [Y\\N]");
             string input = Console.ReadLine();
             if (input == "y")
                 Main(change);
             if (input == "n")
-                Console.WriteLine("Thanks. Your change is {0}. Enjoy your {1}", change, selectionID);
+            {
+                Console.WriteLine("Thanks. Your change is ${0}. Enjoy your {1}", change, selectionID);
+                //Console.ReadKey();
+            }
             else
             {
                 Console.WriteLine("Invalid input.");
                 giveChange(change);
             }
+            Console.ReadKey();
+            Environment.Exit(0); // EXITS AT THE END OF giveChange FUNCTION
 
         }
 
