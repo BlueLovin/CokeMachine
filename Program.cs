@@ -14,12 +14,6 @@ namespace CokeMachine
         }
         static void mainMenu(float balance)
         {
-            
-            coke Coke = new coke();
-            dietCoke dietCoke = new dietCoke();
-            sprite Sprite = new sprite();
-            drPepper DrPepper = new drPepper();
-            dasani Dasani = new dasani();
             DateTime date = DateTime.Now;
             Console.Clear();
 
@@ -33,20 +27,21 @@ namespace CokeMachine
             Console.WriteLine("\nHere are your options:");
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("[1]Coca-Cola - ${0}", coke.price);
+            Console.WriteLine("[1]Coca-Cola - ${0}", soda.cokePrice);
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("[2]Diet Coke - ${0}", dietCoke.price);
+            Console.WriteLine("[2]Diet Coke - ${0}", soda.dietCokePrice);
 
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("[3]Dr. Pepper - ${0}", drPepper.price);
+            Console.WriteLine("[3]Dr. Pepper - ${0}", soda.drPepperPrice);
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("[4]Sprite - ${0}", sprite.price);
+            Console.WriteLine("[4]Sprite - ${0}", soda.spritePrice);
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("[5]Dasani Water - ${0}", dasani.price);
+            Console.WriteLine("[5]Dasani Water - ${0}", soda.dasaniPrice);
             bool okay = false;
+
             while (okay == false)
             {
                 colorWhite();
@@ -71,31 +66,31 @@ namespace CokeMachine
             if (selection == 1)
             {
                 selectionID = "Coca-Cola";
-                selectionPrice = coke.price;
+                selectionPrice = soda.cokePrice;
             }
 
             if (selection == 2)
             {
                 selectionID = "Diet Coke";
-                selectionPrice = dietCoke.price;
+                selectionPrice = soda.dietCokePrice;
             }
 
             if (selection == 3)
             {
                 selectionID = "Dr. Pepper";
-                selectionPrice = drPepper.price;
+                selectionPrice = soda.drPepperPrice;
             }
 
             if (selection == 4)
             {
                 selectionID = "Sprite";
-                selectionPrice = sprite.price;
+                selectionPrice = soda.spritePrice;
             }
 
             if (selection == 5)
             { 
                 selectionID = "Dasani";
-                selectionPrice = dasani.price;
+                selectionPrice = soda.dasaniPrice;
             }
             ///
             ///
@@ -115,6 +110,7 @@ namespace CokeMachine
             {
                 do
                 {
+                    Console.Write("$");
                     balance += float.Parse(Console.ReadLine());
                     Console.WriteLine("Current Balance: ${0}", (balance - selectionPrice).ToString("#.##"));
                 } while (balance < selectionPrice);

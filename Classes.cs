@@ -4,28 +4,13 @@ using System.Text;
 
 namespace CokeMachine
 {
-    public class coke
+    public class soda
     {
-        public static float price = 1.00f;
-    }
-    public class dietCoke
-    {
-        public static float price = 0.75f;
-    }
-    public class drPepper
-    {
-        public static float price = 1.25f;
-    }
-    public class sprite
-    {
-        public static float price = 1.50f;
-    }
-    public class dasani
-    {
-        public static float price = 2.00f;
-    }
-    public class Classes
-    {
-
+        
+        public static float cokePrice = 1.00f;
+        public static float dietCokePrice = 0.75f;
+        public static float drPepperPrice = 1.25f;
+        public static float spritePrice = 1.50f;
+        public static float dasaniPrice = 2.00f;
     }
 }
