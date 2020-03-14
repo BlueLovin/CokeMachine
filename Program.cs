@@ -8,9 +8,13 @@ namespace CokeMachine
     {
         public static float userBalance, selectionPrice;
         public static string selectionID;
-        public static void Main(float balance)
+        static void Main(string[] args)
         {
-
+            mainMenu(0f);
+        }
+        static void mainMenu(float balance)
+        {
+            
             coke Coke = new coke();
             dietCoke dietCoke = new dietCoke();
             sprite Sprite = new sprite();
@@ -131,7 +135,7 @@ namespace CokeMachine
             Console.WriteLine("Would you like to buy another drink? [Y\\N]");
             string input = Console.ReadLine();
             if (input == "y")
-                Main(change);
+                mainMenu(change);
             if (input == "n")
             {
                 Console.WriteLine("Thanks. Your change is ${0}. Enjoy your {1}", change, selectionID);
