@@ -14,20 +14,19 @@ namespace CokeMachine
         }
         static void mainMenu(float balance)
         {
-            
+            //creating local instances of classes defined in Classes.cs
             coke Coke = new coke();
             dietCoke dietCoke = new dietCoke();
             sprite Sprite = new sprite();
             drPepper DrPepper = new drPepper();
             dasani Dasani = new dasani();
             DateTime date = DateTime.Now;
-            Console.Clear();
+            Console.Clear();//Since this method gets called whenever the user buys another drink, console clears every time
 
             Console.WriteLine("Welcome to the Coke Machine.");
             Console.WriteLine("The date is: {0: MM/dd/yyyy HH:mm:ss}.", date);
             colorGreen();
             Console.WriteLine("\nYour current balance: ${0}", balance);
-            colorWhite();
 
             colorWhite();
             Console.WriteLine("\nHere are your options:");
