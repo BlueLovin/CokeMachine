@@ -20,26 +20,25 @@ namespace CokeMachine
             Console.WriteLine("Welcome to the Coke Machine.");
             Console.WriteLine("The date is: {0: MM/dd/yyyy HH:mm:ss}.", date);
             colorGreen();
-            Console.WriteLine("\nYour current balance: ${0}", balance);
+            Console.WriteLine("\nYour current balance: ${0:F2}", balance);
             colorWhite();
 
-            colorWhite();
             Console.WriteLine("\nHere are your options:");
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("[1]Coca-Cola - ${0}", soda.cokePrice);
+            Console.WriteLine("[1]Coca-Cola - ${0:F2}", soda.cokePrice);
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("[2]Diet Coke - ${0}", soda.dietCokePrice);
+            Console.WriteLine("[2]Diet Coke - ${0:F2}", soda.dietCokePrice);
 
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("[3]Dr. Pepper - ${0}", soda.drPepperPrice);
+            Console.WriteLine("[3]Dr. Pepper - ${0:F2}", soda.drPepperPrice);
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("[4]Sprite - ${0}", soda.spritePrice);
+            Console.WriteLine("[4]Sprite - ${0:F2}", soda.spritePrice);
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("[5]Dasani Water - ${0}", soda.dasaniPrice);
+            Console.WriteLine("[5]Dasani Water - ${0:F2}", soda.dasaniPrice);
             bool okay = false;
 
             while (okay == false)
@@ -97,7 +96,7 @@ namespace CokeMachine
             ///
                 if (selectionPrice > balance)
                 {
-                    Console.WriteLine("You chose {0}. Current balance: ${1}" +
+                    Console.WriteLine("You chose {0}. Current balance: ${1:F2}" +
                         "\nPlease insert $" + (selectionPrice - balance), selectionID, balance);
                 }
                 if (balance >= selectionPrice)
@@ -112,7 +111,7 @@ namespace CokeMachine
                 {
                     Console.Write("$");
                     balance += float.Parse(Console.ReadLine());
-                    Console.WriteLine("Current Balance: ${0}", (balance - selectionPrice).ToString("#.##"));
+                    Console.WriteLine("Current Balance: ${0:F2}", (balance - selectionPrice).ToString("#.##"));
                 } while (balance < selectionPrice);
             }
             catch
@@ -134,7 +133,7 @@ namespace CokeMachine
                 mainMenu(change);
             if (input == "n")
             {
-                Console.WriteLine("Thanks. Your change is ${0}. Enjoy your {1}", change, selectionID);
+                Console.WriteLine("Thanks. Your change is ${0}. Enjoy your {1:F2}", change, selectionID);
                 //Console.ReadKey();
             }
             else
